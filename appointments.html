@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarikova Vulkanizerska Radnja - Home</title>
+    <title>Tarikova Vulaknizerska Radnja - Kontakt</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="icon" type="image/jpg" href="favicon.jpg">
@@ -21,22 +21,19 @@
         </span>
 
         <!-- Dropdown menu -->
-        <nav class="navbar">
-            <div class="container-fluid">
-                <!-- Dropdown button -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class = "container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expended="false" aria-label="Prikaži meni">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <!-- Collapsable dropdown meni with links -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar">
-                        <li class="nav-item"><a href="index.html" target="_self" class="nav-link active" aria-current="page">Dobrodošli</a></li>
+                        <li class="nav-item"><a href="index.html" target="_self" class="nav-link">Dobrodošli</a></li>
                         <li class="nav-item"><a href="services.html" target="_self" class="nav-link">Usluge</a></li>
                         <li class="nav-item"><a href="about.html" target="_self" class="nav-link">O nama</a></li>
-                        <li class="nav-item"><a href="location.html" target="_self" class="nav-link">Kako do nas</a></li>
+                        <li class="nav-item"><a href="location.html" target="_self" class="nav-link active" aria-current="page">Kako do nas</a></li>
                         <li class="nav-item"><a href="appointments.html" target="_self" class="nav-link">Termini</a></li>
                     </ul>
-                    <!-- Mail us your feedback -->
                     <a href="mailto:tarik.sorguc@stu.ibu.edu.ba" target="_blank" class="btn">Email</a>
                 </div>
             </div>
@@ -44,55 +41,52 @@
     </header>
 
     <!-- Main part with all important informations -->
-    <main>
-        <section class="#1">
-            <h2>Vaš Lokalni Ekspert za Servis i Popravku Guma</h2>
-            <p>Pružamo profesionalnu i pouzdanu uslugu za sve potrebe vašeg vozila. Vjerujte nam za vašu sigurnost i bolje performanse.</p>
-            
-            <p><a href="#" target="_blank">Saznajte više o našoj ponudi visoko kvalitetnih guma.</a></p>
+    <main class="container my-5">
+        <h2>Zakažite Svoj Termin</h2>
+        <p>Ispunite formular ispod, a mi ćemo vas kontaktirati u najkraćem roku radi potvrde.</p>
 
-            <button class="btn btn-primary cta-button" data-bs-toggle="modal" data-bs-target="#serviceModal">Rezervišite Vaš Termin Danas</button>
-        </section>
-
-        <section class="#2">
-            <h3>Osnovne Usluge</h3>
-
-            <div class="row">
-                <div class="#3">
-                    <div class="card shadow">
-                        <img src="images/tire1.jpg" class="card-img-top" alt="Montaža Novih Guma">
-                        <div class="card-body">
-                            <h5 class="card-title">Regulacija špura</h5>
-                            <p class="card-text">Precizno podešavanje.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="#3">
-                    <div class="card shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">Popravak Pukotina</h5>
-                            <p class="card-text">Brza i pouzdana usluga</p>
-                        </div>
-                    </div>
-                </div>
+        <form class="p-4 border rounded" action="/submit-form" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Vaše Ime i Prezime:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
             </div>
-        </section>
 
-        <!-- Geo location implementation -->
-        <section class="#4">
-            <h4>Kako nas možete pronaći!</h4>
-            <button id="getLocation" class="btn-info">Prikaži Moju Lokaciju</button>
-            <p id="location-output"></p>
-        </section>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address:</label>
+                <input type="email" class="form-control" id="email" name="email" rewuired>
+            </div>
+
+            <div class="mb-3">
+                <label for="service" class="form-label">Vrsta Usluge:</label>
+                <select class="form-select" id="service" name="service" required>
+                    <option value="">Odaberite uslugu...</option>
+                    <option value="montaza">Montaža Novih Guma</option>
+                    <option value="popravak">Popravak Pukotina</option>
+                    <option value="regulacija">Regulacija Trapa</option>
+                    <option value="ostalo">Ostalo</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="date" class="form-label">Datum Termina:</label>
+                <input type="date" class="form-control" id="date" name="date">
+            </div>
+
+            <div class="mb-3">
+                <label for="message" class="form-label">Dodatne Napomene:</label>
+                <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Rezervacija</button>
+        </form>
     </main>
-    
+
     <!-- Footer part with service information, all information about policies and rights, as well as secondary menu -->
-    <footer class="footer">
+    <footer class="footer bg-dark text-white text-center py-3 mt-5">
         <p>&copy; 2025 Tarikova Vulkanizerska Radnja | Tarik Sorguč</p>
         <p><a href="privacy.html" target="_blank" class="text-white">Politika Privatnosti</a></p>
         
-        <div class="#5" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+        <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -103,8 +97,8 @@
                         Molim Vas da posjetite stranicu <a href="appointments.html" target="_blank">Termini</a> kako bi ste izvršili rezervaciju!
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn-secondary" data-bs-dismiss="modal">Zatvori</button>
-                        <a href="appointments.html" class="btn-primary">Idi na formular</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
+                        <a href="appointments.html" class="btn btn-primary">Idi na formular</a>
                     </div>
                 </div>
             </div>
