@@ -108,5 +108,24 @@
             </a>
         </div>
     </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggler = document.querySelector('.navbar-toggler');
+            const collapseMenu = document.getElementById('navbarNav');
+
+            if (toggler && collapseMenu) {
+                toggler.addEventListener('click', () => {
+                    // Toggles the 'open' class, which the CSS uses to show the menu
+                    collapseMenu.classList.toggle('open');
+                    
+                    // Toggle aria-expanded attribute for accessibility
+                    const isExpanded = toggler.getAttribute('aria-expanded') === 'true' || false;
+                    toggler.setAttribute('aria-expanded', !isExpanded);
+                });
+            }
+        });
+    </script>
 </body>
 </html>

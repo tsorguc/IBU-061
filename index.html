@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="icon" type="image/jpg" href="favicon.jpg">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 </head>
 
 <body>
@@ -51,7 +52,7 @@
             
             <p><a href="#" target="_blank">Saznajte više o našoj ponudi visoko kvalitetnih guma.</a></p>
 
-            <button class="btn btn-primary cta-button" data-bs-toggle="modal" data-bs-target="#serviceModal">Rezervišite Vaš Termin Danas</button>
+            <button class="btn btn-primary cta-button" data-bs-toggle="modal" data-bs-target="#serviceModal"><a href="appointments.html">Rezervišite Vaš Termin Danas</a></button>
         </section>
 
         <section class="#2">
@@ -82,7 +83,7 @@
         <!-- Geo location implementation -->
         <section class="#4">
             <h4>Kako nas možete pronaći!</h4>
-            <button id="getLocation" class="btn-info">Prikaži Moju Lokaciju</button>
+            <button id="getLocation" class="btn-info"><a href="https://www.google.com/maps/place/International+Burch+University/@43.8185809,18.3129922,17z/data=!4m6!3m5!1s0x4758ca0f99d6bf3b:0x6f97362d8c61c461!8m2!3d43.8186281!4d18.31207!16s%2Fm%2F0ch3scj?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Prikaži Moju Lokaciju</a></button>
             <p id="location-output"></p>
         </section>
     </main>
@@ -123,5 +124,24 @@
             </a>
         </div>
     </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggler = document.querySelector('.navbar-toggler');
+            const collapseMenu = document.getElementById('navbarNav');
+
+            if (toggler && collapseMenu) {
+                toggler.addEventListener('click', () => {
+                    // Toggles the 'open' class, which the CSS uses to show the menu
+                    collapseMenu.classList.toggle('open');
+                    
+                    // Toggle aria-expanded attribute for accessibility
+                    const isExpanded = toggler.getAttribute('aria-expanded') === 'true' || false;
+                    toggler.setAttribute('aria-expanded', !isExpanded);
+                });
+            }
+        });
+    </script>
 </body>
 </html>

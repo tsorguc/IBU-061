@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="icon" type="image/jpg" href="favicon.jpg">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 </head>
 
 <body>
@@ -52,8 +53,13 @@
             </div>
 
             <div class="mb-3">
-                <label for="email" class="form-label">Email Address:</label>
-                <input type="email" class="form-control" id="email" name="email" rewuired>
+                <label for="email" class="form-label">Email Adresa:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">Broj telefona:</label>
+                <input type="phone" class="form-control" id="phone" name="phone" placeholder="00387 60 123 456" required>
             </div>
 
             <div class="mb-3">
@@ -69,7 +75,7 @@
 
             <div class="mb-3">
                 <label for="date" class="form-label">Datum Termina:</label>
-                <input type="date" class="form-control" id="date" name="date">
+                <input type="date" class="form-control" id="date" name="date" required>
             </div>
 
             <div class="mb-3">
@@ -117,5 +123,24 @@
             </a>
         </div>
     </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggler = document.querySelector('.navbar-toggler');
+            const collapseMenu = document.getElementById('navbarNav');
+
+            if (toggler && collapseMenu) {
+                toggler.addEventListener('click', () => {
+                    // Toggles the 'open' class, which the CSS uses to show the menu
+                    collapseMenu.classList.toggle('open');
+                    
+                    // Toggle aria-expanded attribute for accessibility
+                    const isExpanded = toggler.getAttribute('aria-expanded') === 'true' || false;
+                    toggler.setAttribute('aria-expanded', !isExpanded);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
